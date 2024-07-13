@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 
 export const Order = () => {
   const images = [
-    { src: "OrderImg.jpg", text: "Яг одоо захиалаад авах." },
-    { src: "OrderImg3.jpg", text: "All lates 20% off special offer" },
-    { src: "OrderImg2.jpg", text: "10-ийг аваад 1-ийг бэлгэнд" },
+    { src: "OrderImg.png", text: "Яг одоо захиалаад авах." },
+    { src: "OrderImg3.png", text: "All lates 20% off special offer" },
+    { src: "OrderImg2.png", text: "10-ийг аваад 1-ийг бэлгэнд" },
   ];
   const [currentImage, setCurrentImage] = useState(images[0]);
 
@@ -20,15 +20,15 @@ export const Order = () => {
   }, [images]);
 
   return (
-    <div className="w-full pt-32 relative -z-10 ">
-      <div className="relative h-fit mx-5">
+    <div className="w-full pt-32 md:pt-0 relative -z-10 ">
+      <div className="relative w-fit h-full mx-5 md:mx-0 ">
         <img src={currentImage.src} id="image" className="" />
-        <div className="absolute top-[120px] left-0 w-full h-full flex items-center justify-center text-black text-xl duration-1000">
+        <div className="absolute top-[90px] md:top-[10px] md:left-[-130px] left-0 w-screen h-full flex items-center justify-center md:justify-end text-black text-xl duration-1000">
           {currentImage.text}
         </div>
       </div>
       <button className=" w-screen h-fit ">
-        <p className="px-4 py-1 text-[#AA714A]  w-fit m-auto  rounded-md border-2 mt-14 border-[#AA714A] ">
+        <p className="px-4 py-1 text-[#AA714A]  w-fit m-auto  rounded-md border-2 mt-14 border-[#AA714A] md:absolute top-72 right-52 md:bg-white">
           Захиалга
         </p>
       </button>

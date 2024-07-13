@@ -9,23 +9,23 @@ export const SideBar = () => {
         <ul className="shadow-lg grid gap-8 py-4 ">
           <li className="flex px-5 py-1 gap-2">
             <SideBarMenu />
-            Menu
+            Меню
           </li>
           <li className="flex px-5 py-1 gap-2">
             <SideBarBonus />
-            Bonus
+            Бонус
           </li>
           <li className="flex px-5 py-1 gap-2">
             <SideBarOrder />
-            Order
+            Захиалга
           </li>
         </ul>
         <div className="flex gap-8">
           <button className="border rounded-lg border-[#AA714A] w-36 ">
-            <p className="px-4 py-1 text-[#AA714A]">Sign in</p>
+            <p className="px-4 py-1 text-[#AA714A]">Нэвтрэх</p>
           </button>
           <button className=" rounded-lg bg-[#AA714A] w-36">
-            <p className="px-4 py-1 text-white">Sign Up</p>
+            <p className="px-4 py-1 text-white">Бүртгүүлэх</p>
           </button>
         </div>
       </div>
