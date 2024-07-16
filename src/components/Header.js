@@ -36,7 +36,7 @@ export const Header = () => {
           }`}
           onClick={() => setOpen(!open)}
         >
-          {open ? <HeaderMenu /> : <HeaderClose />}
+          {open ? <HeaderMenu /> : <HeaderClose />} 
         </div>
         <div className="visible max-md:hidden flex mt-8 gap-4 md:mx-24 align-baseline">
           <p className="flex font-semibold">
