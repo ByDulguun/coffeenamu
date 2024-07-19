@@ -16,7 +16,7 @@ export const Header = () => {
     <header className="w-full  shadow-md z-20 fixed md:absolute bg-white ">
       <div className=" flex max-md:justify-between md:justify-between ">
         <div className="flex z-0 w-fit h-fit py-[15px] px-[20px] md:mx-24">
-          <img src="/Footerlogo.jpg" className="w-[62px] h-[62px]" />
+          <img src="/FooterLogo.jpg" className="w-[62px] h-[62px]" />
           <div className="mt-4">
             <h1 className="text-base font-bold h-fit">coffee namu</h1>
             <h1 className="relative bottom-2">mongolia</h1>
@@ -36,7 +36,7 @@ export const Header = () => {
           }`}
           onClick={() => setOpen(!open)}
         >
-          {open ? <HeaderMenu /> : <HeaderClose />} 
+          {open ? <HeaderMenu /> : <HeaderClose />}
         </div>
         <div className="visible max-md:hidden flex mt-8 gap-4 md:mx-24 align-baseline">
           <p className="flex font-semibold">

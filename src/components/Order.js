@@ -1,34 +1,52 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const Order = () => {
-  const images = [
-    { src: "OrderImg.png", text: "Яг одоо захиалаад авах." },
-    { src: "OrderImg3.png", text: "All lates 20% off special offer" },
-    { src: "OrderImg2.png", text: "10-ийг аваад 1-ийг бэлгэнд" },
-  ];
-  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * images.length);
-      setCurrentImage(images[randomIndex]);
-    }, 1500);
+      setIndex((prevIndex) => (prevIndex + 1) % 3); // Assuming there are 3 items
+    }, 3000);
 
-    return () => clearInterval(interval);
-  }, [images]);
+    return () => clearInterval(interval); // Clean up the interval on component unmount
+  }, []);
 
   return (
-    <div className="w-full pt-32 md:pt-0 relative -z-10 ">
-      <div className="relative w-fit h-full mx-5 md:mx-0 ">
-        <img src={currentImage.src} id="image" className="" />
-        <div className="absolute top-[90px] md:top-[10px] md:left-[-130px] left-0 w-screen h-full flex items-center justify-center md:justify-end text-black text-xl duration-1000">
-          {currentImage.text}
+    <div className="w-screen pt-32 md:pt-0 overflow-hidden  -z-10">
+      <div
+        className="w-[340%] h-fit mx-5 md:mx-0 flex   "
+        style={{
+          transform: `translateX(-${index * 35}%)`,
+          transition: "transform 0.5s ease-in-out",
+        }}
+      >
+        <div>
+          <img src="/OrderImg.png" className="carousel_item flex-1 relative " />
+          <p className="absolute top-[200px] left-[1930px] text-white text-[32px] w-[200px] ">
+            Яг одоо захиалаад авах.
+          </p>
+        </div>
+        <div>
+          <img
+            src="/OrderImg3.png"
+            className="carousel_item flex-1 relative "
+          />
+          <p className="absolute top-[200px] left-[4590px]  text-[32px] w-[200px] ">
+            All lattes 20% Off special offer
+          </p>
+        </div>
+
+        <div>
+          <img src="/OrderImg2.png" className="carousel_item flex-1 relative " />
+          <p className="absolute top-[200px] left-[7260px] text-[32px] w-[200px] ">
+            10-ийг аваад 1-ийг бэлгэнд
+          </p>
         </div>
       </div>
-      <button className=" w-screen h-fit ">
-        <p className="px-4 py-1 text-[#AA714A]  w-fit m-auto  rounded-md border-2 mt-14 border-[#AA714A] md:absolute top-72 right-52 md:bg-white">
+      <button className="w-screen h-fit">
+        <p className="px-4 py-1 text-[#AA714A] w-fit m-auto rounded-md border-2 mt-14 border-[#AA714A] md:absolute top-72 right-52 md:bg-white">
           Захиалга
         </p>
       </button>
